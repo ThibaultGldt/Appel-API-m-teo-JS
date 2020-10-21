@@ -2,4 +2,7 @@
 $("#btn-lancer-recherche").click(function(){
 
   console.log($("#champs_saisi").val());
+  $.post("/api/location/search/?query=(\$("#champs_saisi").val())", function(data){
+    console.log(data);
+  })
 })
