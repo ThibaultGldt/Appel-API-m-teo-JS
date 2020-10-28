@@ -1,5 +1,5 @@
 //https://www.metaweather.com/api/location/search/?query=(query)
-var data[];
+//var data[];
 var proxy = 'https://cors-anywhere.herokuapp.com/';
 $("#btn-lancer-recherche").click(function(){
 
@@ -11,7 +11,7 @@ $("#btn-lancer-recherche").click(function(){
       datatType:'JSON',
       success: function(res, status){
         console.log(res);
-        data = parseJSON(res);
+      //  data = parseJSON(res);
       }
   })
 })
