@@ -2,7 +2,13 @@
 $("#btn-lancer-recherche").click(function(){
 
   console.log($("#champs_saisi").val());
-  $.get("/api/location/search/?query=(\$("#champs_saisi").val())", function(data){
-    console.log(data);
+  $.ajax({
+      url:'/api/location/search/',
+      type: 'GET',
+      data:'query='+$("#champs_saisi").val(),
+      datatType:'JSON',
+      success: function(res, status){
+        console.log(res);
+      }
   })
 })
