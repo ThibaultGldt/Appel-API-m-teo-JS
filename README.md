@@ -3,6 +3,8 @@ Base de code de départ pour le projet JS "Développement d'une interface pour A
 
 lien de l'API: https://www.metaweather.com/api/
 
+lien de l'hébergement github: https://thibaultisn.github.io/m4103-projet-glandutt/
+
 
 Recherche -> entrer nom ville/pays/continent -> appel api query = nom -> traiter données
 

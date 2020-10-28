@@ -1,9 +1,9 @@
-///api/location/search/?query=(query)
+//https://www.metaweather.com/api/location/search/?query=(query)
 $("#btn-lancer-recherche").click(function(){
 
   console.log($("#champs_saisi").val());
   $.ajax({
-      url:'/api/location/search/',
+      url:'https://www.metaweather.com/api/location/search/',
       type: 'GET',
       data:'query='+$("#champs_saisi").val(),
       datatType:'JSON',
