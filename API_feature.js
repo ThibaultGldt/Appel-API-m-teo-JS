@@ -4,7 +4,7 @@ var proxy = 'https://cors-anywhere.herokuapp.com/';
 $("#btn-lancer-recherche").click(function(){
 
   console.log($("#champs_saisi").val());
-  $.ajax({
+  /*$.ajax({
       url:proxy+'https://www.metaweather.com/api/location/search/',
       type: 'GET',
       data:'query='+$("#champs_saisi").val(),
@@ -13,5 +13,9 @@ $("#btn-lancer-recherche").click(function(){
         console.log(res);
       //  data = parseJSON(res);
       }
+  })*/
+
+  $.getJSON(proxy+'https://www.metaweather.com/api/location/search/', function(data){
+    console.log(data);
   })
 })
