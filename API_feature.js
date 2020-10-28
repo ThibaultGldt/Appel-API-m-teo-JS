@@ -16,7 +16,7 @@ $("#btn-lancer-recherche").click(function(){
       }
   })*/
 
-  $.getJSON(proxy+'https://www.metaweather.com/api/location/search/?query',query, function(data){
+  $.getJSON(proxy+'https://www.metaweather.com/api/location/search/?query='+query, function(data){
     console.log(data);
     $("#nom_ville").text(data.title);
   })
