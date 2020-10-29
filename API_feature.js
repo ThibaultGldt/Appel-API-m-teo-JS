@@ -30,11 +30,13 @@ $("#btn-lancer-recherche").click(function(){
 })
 
 for(var i = 0; i < 5; i++){
-    document.getElementbyId("bloc-resultats").innerHTML = "<h1> Test" + i + "</h1>";
+    $("#bloc-resultats").innerHTML = "<h1> Test" + i + "</h1>";
 }
 
 function appelLocalisationAPI(query){
 
 }
 
-function appel
+function appel{
+
+}
