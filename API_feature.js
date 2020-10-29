@@ -25,9 +25,9 @@ $("#btn-lancer-recherche").click(function(){
     $.getJSON(proxy+'https://www.metaweather.com/api/location/'+data[0].woeid, function(rep){//demande infos sur la météo de la localisation
       console.log(rep);
       console.log(rep.consolidated_weather[0]);
-      console.log('https://www.metaweather.com/static/img/weather/png/'+rep.consolidated_weather[0].weather_state_abbr+'.png')
+      console.log('https://www.metaweather.com/static/img/weather/png/'+rep.consolidated_weather[0].weather_state_abbr+'.png');
       $.each(rep.consolidated_weather, function(){
-        var icone = 'https://www.metaweather.com/static/img/weather/png/' + this.weather_state_abbr + '.png'
+        var icone = 'https://www.metaweather.com/static/img/weather/png/' + this.weather_state_abbr + '.png';
         $("#bloc-resultats").append("<div id=\"bloc-jour\"> <p>"+this.applicable_date+
                                     "</p> <p>"+ icone +"</p>"
                                     "<p>"+ this.the_temp +"</p> <p>"+ this.wind_speed +"</p> <p>"+this.humidity+"/p> </div>");
