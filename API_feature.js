@@ -24,6 +24,17 @@ $("#btn-lancer-recherche").click(function(){
     $.getJSON(proxy+'https://www.metaweather.com/api/location/'+data[0].woeid, function(rep){
       console.log(rep);
       console.log(rep.consolidated_weather[0]);
+      console.log('https://www.metaweather.com/static/img/weather/png/'+rep.consolidated_weather[0].weather_state_abbr+'.png')
     })
   })
 })
+
+for(var i = 0; i < 5; i++){
+    document.getElementbyId("bloc-resultats").innerHTML = "<h1> Test" + i + "</h1>";
+}
+
+function appelLocalisationAPI(query){
+
+}
+
+function appel
