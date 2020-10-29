@@ -37,6 +37,6 @@ function appelLocalisationAPI(query){
 
 }
 
-function appel{
+function appel(){
 
 }
