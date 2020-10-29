@@ -22,8 +22,8 @@ $("#btn-lancer-recherche").click(function(){
     console.log(data);
     $("#nom_ville").text(data[0].title);
     $.getJSON(proxy+'https://www.metaweather.com/api/location/'+data[0].woeid, function(rep){
-      console.log(rep[0]);
-      console.log(rep[0].consolidated_weather[0]);
+      console.log(rep);
+      console.log(rep.consolidated_weather[0]);
     })
   })
 })
