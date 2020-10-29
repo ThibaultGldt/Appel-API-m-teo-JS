@@ -1,6 +1,8 @@
-//https://www.metaweather.com/api/location/search/?query=(query)
+//https://www.metaweather.com/api/location/search/?query=(query) -> ville/location_type/latt_long/woeid/distance
+//https://www.metaweather.com/api/location/woeid ->
 //var data[];
 var proxy = 'https://cors-anywhere.herokuapp.com/';
+
 $("#btn-lancer-recherche").click(function(){
 
   console.log($("#champs_saisi").val());
@@ -18,6 +20,10 @@ $("#btn-lancer-recherche").click(function(){
 
   $.getJSON(proxy+'https://www.metaweather.com/api/location/search/?query='+query, function(data){
     console.log(data);
-    $("#nom_ville").text(data.title);
+    $("#nom_ville").text(data[0].title);
+    $.getJSON(proxy+'https://www.metaweather.com/api/location/'+data[0].woeid, function(rep){
+      console.log(rep[0]);
+      console.log(rep[0].consolidated_weather[0]);
+    })
   })
 })
