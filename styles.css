@@ -118,6 +118,8 @@ p#explication {
 
 #bloc-jour {
 	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
 }
 
 /* Section de la barre de séparation */
