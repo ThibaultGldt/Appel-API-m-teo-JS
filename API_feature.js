@@ -30,8 +30,7 @@ $("#btn-lancer-recherche").click(function(){
 })
 
 for(var i = 0; i < 5; i++){
-    $("#bloc-resultats").append("<h1> Test" + i + "</h1>");
-    
+    $("#bloc-resultats").append("<div id=\"bloc-jour\"> <p>Date</p> <p>Icone</p> <p>Température</p> <p>Vent</p> <p>Humidité</p> </div>");
 }
 
 function appelLocalisationAPI(query){
