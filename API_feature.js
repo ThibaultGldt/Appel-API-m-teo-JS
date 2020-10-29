@@ -29,10 +29,10 @@ $("#btn-lancer-recherche").click(function(){
       $.each(rep.consolidated_weather, function(){
         var icone = 'https://www.metaweather.com/static/img/weather/png/' + this.weather_state_abbr + '.png';
         $("#bloc-resultats").append("<div id=\"bloc-jour\"> <p>"+this.applicable_date+
-                                    "</p> <p>"+ icone +
-                                    "</p> <p>"+ this.the_temp +
+                                    "</p> <img src=\'"+ icone +
+                                    "\'/> <p>"+ this.the_temp +
                                     "</p> <p>"+ this.wind_speed +
-                                    "</p> <p>"+this.humidity+"/p> </div>");
+                                    "</p> <p>"+this.humidity+"</p> </div>");
       })
     })
   })
