@@ -116,6 +116,10 @@ p#explication {
 	content: "\21E8\00A0";
 }
 
+#bloc-jour {
+	display: flex;
+}
+
 /* Section de la barre de séparation */
 #section-separation {
 	border-left: 2px dashed var(--main-green);

@@ -31,6 +31,7 @@ $("#btn-lancer-recherche").click(function(){
 
 for(var i = 0; i < 5; i++){
     $("#bloc-resultats").append("<h1> Test" + i + "</h1>");
+    
 }
 
 function appelLocalisationAPI(query){
