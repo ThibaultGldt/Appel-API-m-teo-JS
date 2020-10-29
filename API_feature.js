@@ -27,7 +27,10 @@ $("#btn-lancer-recherche").click(function(){
       console.log(rep.consolidated_weather[0]);
       console.log('https://www.metaweather.com/static/img/weather/png/'+rep.consolidated_weather[0].weather_state_abbr+'.png')
       $.each(rep.consolidated_weather, function(){
-        $("#bloc-resultats").append("<div id=\"bloc-jour\"> <p>"+this.applicable_date+"</p> <p>Icone</p> <p>Température</p> <p>Vent</p> <p>Humidité</p> </div>");
+        var icone = 'https://www.metaweather.com/static/img/weather/png/' + this.weather_state_abbr + '.png'
+        $("#bloc-resultats").append("<div id=\"bloc-jour\"> <p>"+this.applicable_date+
+                                    "</p> <p>"+ icone +"</p>"
+                                    "<p>"+ this.the_temp +"</p> <p>"+ this.wind_speed +"</p> <p>"+this.humidity+"/p> </div>");
       })
     })
   })
