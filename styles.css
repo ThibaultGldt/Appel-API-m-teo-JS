@@ -138,10 +138,10 @@ p#explication {
 }
 
 #max_temp {
-	text-decoration-color: red;
+	color: red;
 }
 #min_temp{
-	text-decoration-color: lightblue;
+	color: lightblue;
 }
 
 /* Section de la barre de séparation */

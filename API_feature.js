@@ -19,6 +19,7 @@ $("#btn-lancer-recherche").click(function(){
   })*/
 
   $.getJSON(proxy+'https://www.metaweather.com/api/location/search/?query='+query, function(data){//demande de localisation
+    $("#bloc-resultats").empty();
     $("#localisation").append(data[0].title);
 
     $.getJSON(proxy+'https://www.metaweather.com/api/location/'+data[0].woeid, function(rep){//demande infos sur la météo de la localisation
@@ -34,7 +35,7 @@ $("#btn-lancer-recherche").click(function(){
           $("#jour"+i+" #temp").append("<p id=\"the_temp\">"+this.the_temp.toFixed(0)+"°</p>");
           $("#jour"+i+" #temp").append("<p id=\"min_temp\">"+this.min_temp.toFixed(0)+"°</p>");
 
-        $("#jour"+i).append("div id=\"icone\" </div");//création du bloc contenant le temps et l'icone représentant
+        $("#jour"+i).append("<div id=\"icone\" </div>");//création du bloc contenant le temps et l'icone représentant
           $("#jour"+i+" #icone").append("<img src="+icone+"> <p>"+this.weather_state_name+"</p>")
 
         i++;
