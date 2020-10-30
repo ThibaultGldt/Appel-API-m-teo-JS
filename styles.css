@@ -137,6 +137,13 @@ p#explication {
 	flex-direction: column;
 }
 
+#max_temp {
+	text-decoration-color: red;
+}
+#min_temp{
+	text-decoration-color: lightblue;
+}
+
 /* Section de la barre de séparation */
 #section-separation {
 	border-left: 2px dashed var(--main-green);

@@ -27,11 +27,15 @@ $("#btn-lancer-recherche").click(function(){
       $.each(rep.consolidated_weather, function(){
         var icone = 'https://www.metaweather.com/static/img/weather/png/' + this.weather_state_abbr + '.png';
         $("#bloc-resultats").append("<div id=\"jour"+i+"\"class=\"bloc-jour\">  </div>");//création du bloc contenant toutes les données pour 1 jour
-        $("#jour"+i).append("<p>"+this.applicable_date+"</p>");
+          $("#jour"+i).append("<p>"+this.applicable_date+"</p>");
+
         $("#jour"+i).append("<div id=\"temp\" class=\"case\" </div>");//création du bloc contenant les témperatures: Max, Moyenne, Min
-          $("#jour"+i+" #temp").append("<p id=\"max_temp\">"+this.max_temp.toFixed(0)+"</p>");
-          $("#jour"+i+" #temp").append("<p id=\"the_temp\">"+this.the_temp.toFixed(0)+"</p>");
-          $("#jour"+i+" #temp").append("<p id=\"min_temp\">"+this.min_temp.toFixed(0)+"</p>");
+          $("#jour"+i+" #temp").append("<p id=\"max_temp\">"+this.max_temp.toFixed(0)+"°</p>");
+          $("#jour"+i+" #temp").append("<p id=\"the_temp\">"+this.the_temp.toFixed(0)+"°</p>");
+          $("#jour"+i+" #temp").append("<p id=\"min_temp\">"+this.min_temp.toFixed(0)+"°</p>");
+
+        $("#jour"+i).append("div id=\"icone\" </div");//création du bloc contenant le temps et l'icone représentant
+          $("#jour"+i+" #icone").append("<img src="+icone+"> <p>"+this.weather_state_name+"</p>")
 
         i++;
       })
