@@ -19,25 +19,28 @@ $("#btn-lancer-recherche").click(function(){
   })*/
 
   $.getJSON(proxy+'https://www.metaweather.com/api/location/search/?query='+query, function(data){//demande de localisation
-    console.log(data);//test
-    $("#nom_ville").text(data[0].title);//test
+    $("#localisation").append(data[0].title);
 
     $.getJSON(proxy+'https://www.metaweather.com/api/location/'+data[0].woeid, function(rep){//demande infos sur la météo de la localisation
-      console.log(rep);
-      console.log(rep.consolidated_weather[0]);
-      console.log('https://www.metaweather.com/static/img/weather/png/'+rep.consolidated_weather[0].weather_state_abbr+'.png');
+      $("#localisation").append(rep.parent.title);
       $.each(rep.consolidated_weather, function(){
         var icone = 'https://www.metaweather.com/static/img/weather/png/' + this.weather_state_abbr + '.png';
-        $("#bloc-resultats").append("<div id=\"bloc-jour\"> <p>"+this.applicable_date+
-                                    "</p> <img src=\'"+ icone +
-                                    "\'/> <p>"+ this.the_temp +
-                                    "</p> <p>"+ this.wind_speed +
-                                    "</p> <p>"+this.humidity+"</p> </div>");
+        $("#bloc-resultats").append("<div id=\"bloc-jour\">  </div>");//création du bloc contenant toutes les données pour 1 jour
+        $("#bloc-jour").append("<p>"+this.applicable_date+"</p>");
+        $("#bloc-jour").append("<div id=\"temp\" class=\"case\" </div>");//création du bloc contenant les témperatures: Max, Moyenne, Min
+          $("#temp").append("<p id=\"max_temp\">"+this.max_temp+"</p>");
+          $("#temp").append("<p id=\"the_temp\">"+this.the_temp+"</p>");
+          $("#temp").append("<p id=\"min_temp\">"+this.min_temp+"</p>");
+
       })
     })
   })
 })
-
+<p>"+this.applicable_date+
+                            "</p> <img src=\'"+ icone +
+                            "\'/> <p>"+ this.the_temp +
+                            "</p> <p>"+ this.wind_speed +
+                            "</p> <p>"+this.humidity+"</p>
 /*for(var i = 0; i < 5; i++){
     $("#bloc-resultats").append("<div id=\"bloc-jour\"> <p>""</p> <p>Icone</p> <p>Température</p> <p>Vent</p> <p>Humidité</p> </div>");
 }*/

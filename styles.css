@@ -127,6 +127,11 @@ p#explication {
 	height: 50px;
 }
 
+#temp {
+	display: flex;
+	flex-direction: column;
+}
+
 /* Section de la barre de séparation */
 #section-separation {
 	border-left: 2px dashed var(--main-green);
