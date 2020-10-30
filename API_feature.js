@@ -37,7 +37,7 @@ $("#btn-lancer-recherche").click(function(){
         var max_temp = this.max_temp.toFixed(0);
         var temp = this.the_temp.toFixed(0);
         var min_temp = this.min_temp.toFixed(0);
-        case2.append(max_temp);case2.append(temp);case2(min_temp);
+        case2.append(max_temp);case2.append(temp);case2.append(min_temp);
 
         var case3 = document.createElement('td');
         var temps = this.weather_state_name;
