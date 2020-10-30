@@ -35,12 +35,14 @@ $("#btn-lancer-recherche").click(function(){
           $("#jour"+i+" #temp").append("<p id=\"the_temp\">"+this.the_temp.toFixed(0)+"°</p>");
           $("#jour"+i+" #temp").append("<p id=\"min_temp\">"+this.min_temp.toFixed(0)+"°</p>");
 
-        $("#jour"+i).append("<div id=\"icone\" </div>");//création du bloc contenant le temps et l'icone représentant
+        $("#jour"+i).append("<div id=\"icone\" class=\"case\" </div>");//création du bloc contenant le temps et l'icone représentant
           $("#jour"+i+" #icone").append("<img src="+icone+"> <p>"+this.weather_state_name+"</p>")
 
-        $("#jour"+i).append("<div id=\"vent\" </div>");//création du bloc contenant les données sur le vent
+        $("#jour"+i).append("<div id=\"vent\" class=\"case\" </div>");//création du bloc contenant les données sur le vent
           $("#jour"+i+" #vent").append("<p>"+this.wind_speed.toFixed(0)+"km/h</p>");//affichage vitesse du vent
           $("#jour"+i+" #vent").append("<p>"+this.wind_direction_compass+"</p>");
+
+        $("#jour"+i).append("<p class=\"case\">"+this.humidity+"%</p>");
 
         i++;
       })

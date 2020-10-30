@@ -125,7 +125,7 @@ p#explication {
 	justify-content: space-around;
 	flex-direction: row;
 	flex-wrap: wrap;
-	
+
 }
 
 .bloc-jour img {
@@ -133,7 +133,7 @@ p#explication {
 	height: 50px;
 }
 
-#temp {
+.case {
 	display: flex;
 	flex-direction: column;
 }
