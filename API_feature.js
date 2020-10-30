@@ -26,7 +26,7 @@ $("#btn-lancer-recherche").click(function(){
       var i = 1;
       var tableau = document.createElement('table');
       $.each(rep.consolidated_weather, function(){
-        var icone = proxy+'https://www.metaweather.com/static/img/weather/png/' + this.weather_state_abbr + '.png';
+        var icone ='https://www.metaweather.com/static/img/weather/png/' + this.weather_state_abbr + '.png';
         var jour = document.createElement('tr');
 
         var case1 = document.createElement('td');
