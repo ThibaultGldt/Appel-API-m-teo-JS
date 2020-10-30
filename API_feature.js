@@ -42,7 +42,7 @@ $("#btn-lancer-recherche").click(function(){
         var case3 = document.createElement('td');
         var img = document.createElement('img');
         img.src = icone;
-        case.append(img);
+        case3.append(img);
         var temps = this.weather_state_name;
         case3.append(temps);
 
