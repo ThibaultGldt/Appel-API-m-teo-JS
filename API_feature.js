@@ -24,14 +24,19 @@ $("#btn-lancer-recherche").click(function(){
 function appelAPI(query){
   console.log(query);
   $.getJSON(proxy + url1 + query, function(data){//demande de localisation
-    $("#bloc-resultats").empty();
-    $("#localisation").append(data[0].title);
+
 
     $.getJSON(proxy+url2+data[0].woeid, function(rep){//demande infos sur la météo de la localisation
-      $("#localisation").append("<p><h1>"+data[0].title+"</h1><h2>, "+rep.parent.title+"</h2>");
+      $("#localisation").append("<p><h1>"+data[0].title+"</h1><h2>, "+rep.parent.title+"</h2></p>");
 
 
       var tableau = document.createElement('table');
+      var valeur = ["Date", "Températures", "Temps", "Vent", "Humidité"];
+      var ligne = document.createElement('tr'); tableau.append(ligne);
+      $.each(valeur, function()){
+        var case = document.createElement('th');
+        case.append(this);
+      }
       tableau.append("<tr><th>Date</th><th>Températures</th><th>Temps</th><th>Vent</th><th>Humidité</th></tr>");
       $.each(rep.consolidated_weather, function(){
         var icone ='https://www.metaweather.com/static/img/weather/png/' + this.weather_state_abbr + '.png';
