@@ -34,6 +34,7 @@ $("#btn-lancer-recherche").click(function(){
         case1.append(donnee_date);
 
         var case2 = document.createElement('td');
+        case2.addClass('temp');
         var max_temp = document.createElement('p');max_temp.append(this.max_temp.toFixed(0));
         var temp = document.createElement('p');temp.append(this.the_temp.toFixed(0));
         var min_temp = document.createElement('p');min_temp.append(this.min_temp.toFixed(0));
@@ -47,7 +48,7 @@ $("#btn-lancer-recherche").click(function(){
         case3.append(temps);
 
         var case4 = document.createElement('td');
-        case4.append(this.wind_speed.toFixed(0)+"km/h");
+        case4.append(this.wind_speed.toFixed(0)+"km/h</br>");
         case4.append(this.wind_direction_compass);
 
         var case5 = document.createElement('td');
