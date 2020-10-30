@@ -40,8 +40,10 @@ $("#btn-lancer-recherche").click(function(){
         case2.append(max_temp);case2.append(temp);case2.append(min_temp);
 
         var case3 = document.createElement('td');
+        var img = document.createElement('img');
+        img.src = icone;
+        case.append(img);
         var temps = this.weather_state_name;
-        case3.append("<img src=\""+icone+"\">");
         case3.append(temps);
 
         var case4 = document.createElement('td');
