@@ -51,7 +51,7 @@ $("#btn-lancer-recherche").click(function(){
         case4.append(this.wind_direction_compass);
 
         var case5 = document.createElement('td');
-        case5.append(this.humidity);
+        case5.append(this.humidity+'%');
         jour.append(case1);jour.append(case2);jour.append(case3);jour.append(case4);jour.append(case5);
         tableau.append(jour);
         /*table.append("<div id=\"jour"+i+"\"class=\"bloc-jour\">  </div>");//création du bloc contenant toutes les données pour 1 jour
