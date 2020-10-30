@@ -18,6 +18,7 @@ $("#btn-lancer-recherche").click(function(){
 })
 
 function appelAPI(query){
+  $("#localisation").empty();
   $("#bloc-resultats").empty();
   $("#bloc-gif-attente").css("display", "block");
   $.getJSON(proxy + url1 + query, function(data){//demande de localisation
@@ -29,11 +30,13 @@ function appelAPI(query){
 
       var tableau = document.createElement('table');
       var valeur = ["Date", "Températures", "Temps", "Vent", "Humidité"];
+      var ligne = document.createElement('tr');
       $.each(valeur, function(){
         var bloc = document.createElement('th');
         bloc.append(this);
+        ligne.append(bloc);
       })
-      var ligne = document.createElement('tr'); tableau.append(ligne);
+       tableau.append(ligne);
 
       $.each(rep.consolidated_weather, function(){
         var icone ='https://www.metaweather.com/static/img/weather/png/' + this.weather_state_abbr + '.png';
