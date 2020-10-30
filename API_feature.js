@@ -2,6 +2,8 @@
 //https://www.metaweather.com/api/location/woeid ->
 //var data[];
 var proxy = 'https://cors-anywhere.herokuapp.com/';
+var url1 = 'https://www.metaweather.com/api/location/search/?query=';
+var url2 = 'https://www.metaweather.com/api/location/';
 $("#champs_saisi").focus(function(){
   $(document).on('keypress',function(e) {
       if(e.which == 13) {
@@ -15,16 +17,16 @@ $("#btn-lancer-recherche").click(function(){
   console.log($("#champs_saisi").val());
   var query = $("#champs_saisi").val();
 
-  $.getJSON(proxy+'https://www.metaweather.com/api/location/search/?query='+query, function(data){//demande de localisation
+  $.getJSON(proxy + url1 + query, function(data){//demande de localisation
     $("#bloc-resultats").empty();
     $("#localisation").append(data[0].title);
 
-    $.getJSON(proxy+'https://www.metaweather.com/api/location/'+data[0].woeid, function(rep){//demande infos sur la météo de la localisation
+    $.getJSON(proxy+url2+data[0].woeid, function(rep){//demande infos sur la météo de la localisation
       $("#localisation").append(rep.parent.title);
       var i = 1;
       var tableau = document.createElement('table');
       $.each(rep.consolidated_weather, function(){
-        var icone = 'https://www.metaweather.com/static/img/weather/png/' + this.weather_state_abbr + '.png';
+        var icone = proxy+'https://www.metaweather.com/static/img/weather/png/' + this.weather_state_abbr + '.png';
         var jour = document.createElement('tr');
 
         var case1 = document.createElement('td');
