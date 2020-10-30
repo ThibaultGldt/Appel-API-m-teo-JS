@@ -23,6 +23,24 @@ $("#btn-lancer-recherche").click(function(){
         var case1 = document.createElement('td');
         var donnee_date = this.applicable_date;
         case1.append(donnee_date);
+
+        var case2 = document.createElement('td');
+        var max_temp = this.max_temp.toFixed(0);
+        var temp = this.the_temp.toFixed(0);
+        var min_temp = this.min_temp.toFixed(0);
+        case2.append(max_temp);case2.append(temp);case2(min_temp);
+
+        var case3 = document.createElement('td');
+        var temps = this.weather_state_name;
+        case3.append("<img src="+icone+">");
+        case3.append(temps);
+
+        var case4 = document.createElement('td');
+        case4.append(this.wind_speed.toFixed(0)+"km/h");
+        case4.append(this.wind_direction_compass);
+
+        var case5 = document.createElement('td');
+        case5.append(this.humidity);
         jour.append(case1);
         tableau.append(jour);
         /*table.append("<div id=\"jour"+i+"\"class=\"bloc-jour\">  </div>");//création du bloc contenant toutes les données pour 1 jour
@@ -48,7 +66,3 @@ $("#btn-lancer-recherche").click(function(){
     })
   })
 })
-
-/*for(var i = 0; i < 5; i++){
-    $("#bloc-resultats").append("<div id=\"bloc-jour\"> <p>""</p> <p>Icone</p> <p>Température</p> <p>Vent</p> <p>Humidité</p> </div>");
-}*/
