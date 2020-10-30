@@ -36,11 +36,7 @@ $("#btn-lancer-recherche").click(function(){
     })
   })
 })
-<p>"+this.applicable_date+
-                            "</p> <img src=\'"+ icone +
-                            "\'/> <p>"+ this.the_temp +
-                            "</p> <p>"+ this.wind_speed +
-                            "</p> <p>"+this.humidity+"</p>
+
 /*for(var i = 0; i < 5; i++){
     $("#bloc-resultats").append("<div id=\"bloc-jour\"> <p>""</p> <p>Icone</p> <p>Température</p> <p>Vent</p> <p>Humidité</p> </div>");
 }*/
