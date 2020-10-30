@@ -7,16 +7,6 @@ $("#btn-lancer-recherche").click(function(){
 
   console.log($("#champs_saisi").val());
   var query = $("#champs_saisi").val();
-  /*$.ajax({
-      url:proxy+'https://www.metaweather.com/api/location/search/',
-      type: 'GET',
-      data:'query='+$("#champs_saisi").val(),
-      datatType:'JSON',
-      success: function(res, status){
-        console.log(res);
-      //  data = parseJSON(res);
-      }
-  })*/
 
   $.getJSON(proxy+'https://www.metaweather.com/api/location/search/?query='+query, function(data){//demande de localisation
     $("#bloc-resultats").empty();
@@ -54,6 +44,7 @@ $("#btn-lancer-recherche").click(function(){
 
         i++;*/
       })
+      $("#bloc-resultats").append(tableau);
     })
   })
 })
