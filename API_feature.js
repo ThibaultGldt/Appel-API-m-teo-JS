@@ -34,8 +34,8 @@ function appelAPI(query){
       var valeur = ["Date", "Températures", "Temps", "Vent", "Humidité"];
       var ligne = document.createElement('tr'); tableau.append(ligne);
       $.each(valeur, function(){
-        var case = document.createElement('th');
-        case.append(this);
+        var bloc = document.createElement('th');
+        bloc.append(this);
       })
 
       tableau.append("<tr><th>Date</th><th>Températures</th><th>Temps</th><th>Vent</th><th>Humidité</th></tr>");
