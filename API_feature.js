@@ -32,6 +32,7 @@ function appelAPI(query){
 
 
       var tableau = document.createElement('table');
+      tableau.append("<tr><th>Date</th><th>Températures</th><th>Temps</th><th>Vent</th><th>Humidité</th></tr>");
       $.each(rep.consolidated_weather, function(){
         var icone ='https://www.metaweather.com/static/img/weather/png/' + this.weather_state_abbr + '.png';
         var jour = document.createElement('tr');
@@ -55,8 +56,7 @@ function appelAPI(query){
         case3.append(temps);
 
         var case4 = document.createElement('td');
-        case4.append(this.wind_speed.toFixed(0)+"km/h \n");
-        case4.append(this.wind_direction_compass);
+        case4.append(this.wind_speed.toFixed(0)+"km/h");
 
         var case5 = document.createElement('td');
         case5.append(this.humidity+'%');
