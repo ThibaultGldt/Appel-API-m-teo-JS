@@ -28,8 +28,9 @@ function appelAPI(query){
     $("#localisation").append(data[0].title);
 
     $.getJSON(proxy+url2+data[0].woeid, function(rep){//demande infos sur la météo de la localisation
-      $("#localisation").append(rep.parent.title);
-      var i = 1;
+      $("#localisation").append("<p><h1>"+data[0].title+"</h1><h2>, "+rep.parent.title+"</h2>");
+
+
       var tableau = document.createElement('table');
       $.each(rep.consolidated_weather, function(){
         var icone ='https://www.metaweather.com/static/img/weather/png/' + this.weather_state_abbr + '.png';
@@ -54,7 +55,7 @@ function appelAPI(query){
         case3.append(temps);
 
         var case4 = document.createElement('td');
-        case4.append(this.wind_speed.toFixed(0)+"km/h <br>");
+        case4.append(this.wind_speed.toFixed(0)+"km/h \n");
         case4.append(this.wind_direction_compass);
 
         var case5 = document.createElement('td');
