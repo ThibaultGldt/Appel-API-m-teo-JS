@@ -22,11 +22,11 @@ $("#btn-lancer-recherche").click(function(){
 })
 
 function appelAPI(query){
-  console.log(query);
+  $("#bloc-gif-attente").css("visibility", "visible");
   $.getJSON(proxy + url1 + query, function(data){//demande de localisation
 
-
     $.getJSON(proxy+url2+data[0].woeid, function(rep){//demande infos sur la météo de la localisation
+      $("#bloc-gif-attente").css("visibility", "hidden");
       $("#localisation").append("<p><h1>"+data[0].title+"</h1><h2>, "+rep.parent.title+"</h2></p>");
 
 
