@@ -2,6 +2,11 @@
 //https://www.metaweather.com/api/location/woeid ->
 //var data[];
 var proxy = 'https://cors-anywhere.herokuapp.com/';
+$(document).on('keypress',function(e) {
+    if(e.which == 13) {
+        alert('You pressed enter!');
+    }
+})
 
 $("#btn-lancer-recherche").click(function(){
 
