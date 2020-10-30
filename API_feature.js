@@ -26,7 +26,7 @@ $("#btn-lancer-recherche").click(function(){
       $("#localisation").append(rep.parent.title);
       var i = 1;
       $.each(rep.consolidated_weather, function(){
-        var icone = 'https://www.metaweather.com/static/img/weather/png/' + this.weather_state_abbr + '.png';
+        var icone = proxy+'https://www.metaweather.com/static/img/weather/png/' + this.weather_state_abbr + '.png';
         $("#bloc-resultats").append("<div id=\"jour"+i+"\"class=\"bloc-jour\">  </div>");//création du bloc contenant toutes les données pour 1 jour
           $("#jour"+i).append("<p>"+this.applicable_date+"</p>");
 
