@@ -16,7 +16,13 @@ $("#btn-lancer-recherche").click(function(){
 
   console.log($("#champs_saisi").val());
   var query = $("#champs_saisi").val();
+  appelAPI(query)
 
+
+})
+
+function appelAPI(query){
+  console.log(query);
   $.getJSON(proxy + url1 + query, function(data){//demande de localisation
     $("#bloc-resultats").empty();
     $("#localisation").append(data[0].title);
@@ -34,7 +40,7 @@ $("#btn-lancer-recherche").click(function(){
         case1.append(donnee_date);
 
         var case2 = document.createElement('td');
-        
+
         var max_temp = document.createElement('p');max_temp.append(this.max_temp.toFixed(0));
         var temp = document.createElement('p');temp.append(this.the_temp.toFixed(0));
         var min_temp = document.createElement('p');min_temp.append(this.min_temp.toFixed(0));
@@ -48,7 +54,7 @@ $("#btn-lancer-recherche").click(function(){
         case3.append(temps);
 
         var case4 = document.createElement('td');
-        case4.append(this.wind_speed.toFixed(0)+"km/h</br>");
+        case4.append(this.wind_speed.toFixed(0)+"km/h <br>");
         case4.append(this.wind_direction_compass);
 
         var case5 = document.createElement('td');
@@ -77,8 +83,4 @@ $("#btn-lancer-recherche").click(function(){
       $("#bloc-resultats").append(tableau);
     })
   })
-})
-
-function appelAPI(query){
-  console.log(query);
 }
