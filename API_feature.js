@@ -17,11 +17,11 @@ $("#btn-lancer-recherche").click(appelAPI($("#champs_saisi").val()))
 
 function appelAPI(query){
   $("#bloc-resultats").empty();
-  $("#bloc-gif-attente").css("visibility", "visible");
+  $("#bloc-gif-attente").css("display", "block");
   $.getJSON(proxy + url1 + query, function(data){//demande de localisation
 
     $.getJSON(proxy+url2+data[0].woeid, function(rep){//demande infos sur la météo de la localisation
-      $("#bloc-gif-attente").css("visibility", "hidden");
+      $("#bloc-gif-attente").css("display", "none");
       $("#localisation").append("<p><h2>"+data[0].title+", "+rep.parent.title+"</h2></p>");
 
 
