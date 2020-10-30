@@ -120,7 +120,7 @@ p#explication {
 	flex-direction: column;
 }
 
-.bloc-jour {
+tr {
 	display: flex;
 	justify-content: space-evenly;
 	flex-direction: row;
@@ -128,12 +128,12 @@ p#explication {
 	border-style: solid;
 }
 
-.bloc-jour img {
+td img {
 	width: 50px;
 	height: 50px;
 }
 
-.case {
+td {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
