@@ -38,6 +38,10 @@ $("#btn-lancer-recherche").click(function(){
         $("#jour"+i).append("<div id=\"icone\" </div>");//création du bloc contenant le temps et l'icone représentant
           $("#jour"+i+" #icone").append("<img src="+icone+"> <p>"+this.weather_state_name+"</p>")
 
+        $("#jour"+i).append("<div id=\"vent\" </div>");//création du bloc contenant les données sur le vent
+          $("#jour"+i+" #vent").append("<p>"+this.wind_speed.toFixed(0)+"km/h</p>");//affichage vitesse du vent
+          $("#jour"+i+" #vent").append("<p>"+this.wind_direction_compass+"</p>");
+
         i++;
       })
     })
