@@ -33,10 +33,11 @@ function appelAPI(query){
       var tableau = document.createElement('table');
       var valeur = ["Date", "Températures", "Temps", "Vent", "Humidité"];
       var ligne = document.createElement('tr'); tableau.append(ligne);
-      $.each(valeur, function()){
+      $.each(valeur, function(){
         var case = document.createElement('th');
         case.append(this);
-      }
+      })
+
       tableau.append("<tr><th>Date</th><th>Températures</th><th>Temps</th><th>Vent</th><th>Humidité</th></tr>");
       $.each(rep.consolidated_weather, function(){
         var icone ='https://www.metaweather.com/static/img/weather/png/' + this.weather_state_abbr + '.png';
@@ -67,24 +68,6 @@ function appelAPI(query){
         case5.append(this.humidity+'%');
         jour.append(case1);jour.append(case2);jour.append(case3);jour.append(case4);jour.append(case5);
         tableau.append(jour);
-        /*table.append("<div id=\"jour"+i+"\"class=\"bloc-jour\">  </div>");//création du bloc contenant toutes les données pour 1 jour
-          $("#jour"+i).append("<p class=\"case\">"+this.applicable_date+"</p>");
-
-        $("#jour"+i).append("<div id=\"temp\" class=\"case\" </div>");//création du bloc contenant les témperatures: Max, Moyenne, Min
-          $("#jour"+i+" #temp").append("<p id=\"max_temp\">"+this.max_temp.toFixed(0)+"°</p>");
-          $("#jour"+i+" #temp").append("<p id=\"the_temp\">"+this.the_temp.toFixed(0)+"°</p>");
-          $("#jour"+i+" #temp").append("<p id=\"min_temp\">"+this.min_temp.toFixed(0)+"°</p>");
-
-        $("#jour"+i).append("<div id=\"icone\" class=\"case\" </div>");//création du bloc contenant le temps et l'icone représentant
-          $("#jour"+i+" #icone").append("<img src="+icone+"> <p>"+this.weather_state_name+"</p>")
-
-        $("#jour"+i).append("<div id=\"vent\" class=\"case\" </div>");//création du bloc contenant les données sur le vent
-          $("#jour"+i+" #vent").append("<p>"+this.wind_speed.toFixed(0)+"km/h</p>");//affichage vitesse du vent
-          $("#jour"+i+" #vent").append("<p>"+this.wind_direction_compass+"</p>");
-
-        $("#jour"+i).append("<p class=\"case\">"+this.humidity+"%</p>");
-
-        i++;*/
       })
       $("#bloc-resultats").append(tableau);
     })
