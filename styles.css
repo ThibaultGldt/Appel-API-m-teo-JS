@@ -25,6 +25,7 @@ body {
 /* Paragraphes "Aucun résultat..." et "Aucune recherche..." */
 p.info-vide {
 	font-style: italic;
+	display: none;
 }
 
 /* Partie En-tête */
