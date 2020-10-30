@@ -115,10 +115,15 @@ p#explication {
 		(Cf. https://unicode-table.com/fr/21E8/ ) */
 	content: "\21E8\00A0";
 }
+#bloc-resultats {
+	display: flex;
+	flex-direction: row;
+}
 
 #bloc-jour {
 	display: flex;
 	justify-content: space-around;
+	flex-direction: row;
 	flex-wrap: wrap;
 }
 
