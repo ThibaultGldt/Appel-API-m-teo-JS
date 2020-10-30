@@ -25,9 +25,17 @@ $("#btn-lancer-recherche").click(function(){
     $.getJSON(proxy+'https://www.metaweather.com/api/location/'+data[0].woeid, function(rep){//demande infos sur la météo de la localisation
       $("#localisation").append(rep.parent.title);
       var i = 1;
+      var tableau = document.createElement('table');
       $.each(rep.consolidated_weather, function(){
-        var icone = proxy+'https://www.metaweather.com/static/img/weather/png/' + this.weather_state_abbr + '.png';
-        $("#bloc-resultats").append("<div id=\"jour"+i+"\"class=\"bloc-jour\">  </div>");//création du bloc contenant toutes les données pour 1 jour
+        var icone = 'https://www.metaweather.com/static/img/weather/png/' + this.weather_state_abbr + '.png';
+        var jour = document.createElement('tr');
+
+        var case1 = document.createElement('td');
+        var donnee_date = this.applicable_date;
+        case1.append(donnee_date);
+        jour.append(case1);
+        tableau.append(jour);
+        /*table.append("<div id=\"jour"+i+"\"class=\"bloc-jour\">  </div>");//création du bloc contenant toutes les données pour 1 jour
           $("#jour"+i).append("<p class=\"case\">"+this.applicable_date+"</p>");
 
         $("#jour"+i).append("<div id=\"temp\" class=\"case\" </div>");//création du bloc contenant les témperatures: Max, Moyenne, Min
@@ -44,7 +52,7 @@ $("#btn-lancer-recherche").click(function(){
 
         $("#jour"+i).append("<p class=\"case\">"+this.humidity+"%</p>");
 
-        i++;
+        i++;*/
       })
     })
   })
