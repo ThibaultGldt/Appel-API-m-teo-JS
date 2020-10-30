@@ -70,8 +70,8 @@ function appelAPI(query){
       })
       $("#bloc-resultats").append(tableau);
     })
-    .fail(function(jqxhr, textStatus, error)){
+    .fail(function(jqxhr, textStatus, error){
       $(".info-vide").css("display", "block");
-    }
+    })
   })
 }
