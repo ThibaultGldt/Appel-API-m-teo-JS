@@ -29,9 +29,9 @@ $("#btn-lancer-recherche").click(function(){
         $("#bloc-resultats").append("<div id=\"jour"+i+"\"class=\"bloc-jour\">  </div>");//création du bloc contenant toutes les données pour 1 jour
         $("#jour"+i).append("<p>"+this.applicable_date+"</p>");
         $("#jour"+i).append("<div id=\"temp\" class=\"case\" </div>");//création du bloc contenant les témperatures: Max, Moyenne, Min
-          $("#jour"+i+" #temp").append("<p id=\"max_temp\">"+this.max_temp+"</p>");
-          $("#jour"+i+" #temp").append("<p id=\"the_temp\">"+this.the_temp+"</p>");
-          $("#jour"+i+" #temp").append("<p id=\"min_temp\">"+this.min_temp+"</p>");
+          $("#jour"+i+" #temp").append("<p id=\"max_temp\">"+this.max_temp.toFixed(0)+"</p>");
+          $("#jour"+i+" #temp").append("<p id=\"the_temp\">"+this.the_temp.toFixed(0)+"</p>");
+          $("#jour"+i+" #temp").append("<p id=\"min_temp\">"+this.min_temp.toFixed(0)+"</p>");
 
         i++;
       })
