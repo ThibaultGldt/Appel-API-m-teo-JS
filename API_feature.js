@@ -13,7 +13,9 @@ $("#champs_saisi").focus(function(){
     })
 })
 
-$("#btn-lancer-recherche").click(appelAPI($("#champs_saisi").val()))
+$("#btn-lancer-recherche").click(function(){
+  appelAPI($("#champs_saisi").val();
+})
 
 function appelAPI(query){
   $("#bloc-resultats").empty();
