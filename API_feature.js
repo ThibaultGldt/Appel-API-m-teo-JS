@@ -5,7 +5,7 @@ var proxy = 'https://cors-anywhere.herokuapp.com/';
 $("#champs_saisi").focus(function(){
   $(document).on('keypress',function(e) {
       if(e.which == 13) {
-          alert($("#champs_saisi"));
+          appelAPI($("#champs_saisi").val())
       }
     })
 })
@@ -73,3 +73,7 @@ $("#btn-lancer-recherche").click(function(){
     })
   })
 })
+
+function appelAPI(query){
+  console.log(query);
+}
