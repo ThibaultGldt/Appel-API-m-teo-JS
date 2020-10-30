@@ -122,10 +122,10 @@ p#explication {
 
 .bloc-jour {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	flex-direction: row;
 	flex-wrap: wrap;
-
+	border-style: solid;
 }
 
 .bloc-jour img {
@@ -136,6 +136,8 @@ p#explication {
 .case {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	border-style: solid;
 }
 
 #max_temp {
