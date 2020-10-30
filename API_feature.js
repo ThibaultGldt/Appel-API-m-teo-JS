@@ -32,6 +32,8 @@ $("#btn-lancer-recherche").click(function(){
           $("#bloc-jour"+i+" #temp").append("<p id=\"max_temp\">"+this.max_temp+"</p>");
           $("#bloc-jour"+i+" #temp").append("<p id=\"the_temp\">"+this.the_temp+"</p>");
           $("#bloc-jour"+i+" #temp").append("<p id=\"min_temp\">"+this.min_temp+"</p>");
+
+        i++;
       })
     })
   })
