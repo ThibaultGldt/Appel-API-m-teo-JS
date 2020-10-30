@@ -34,7 +34,7 @@ $("#btn-lancer-recherche").click(function(){
         case1.append(donnee_date);
 
         var case2 = document.createElement('td');
-        case2.addClass('temp');
+        
         var max_temp = document.createElement('p');max_temp.append(this.max_temp.toFixed(0));
         var temp = document.createElement('p');temp.append(this.the_temp.toFixed(0));
         var min_temp = document.createElement('p');min_temp.append(this.min_temp.toFixed(0));
