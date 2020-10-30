@@ -4,6 +4,7 @@
 var proxy = 'https://cors-anywhere.herokuapp.com/';
 var url1 = 'https://www.metaweather.com/api/location/search/?query=';
 var url2 = 'https://www.metaweather.com/api/location/';
+
 $("#champs_saisi").focus(function(){
   $(document).on('keypress',function(e) {
       if(e.which == 13) {
@@ -12,13 +13,7 @@ $("#champs_saisi").focus(function(){
     })
 })
 
-$("#btn-lancer-recherche").click(function(){
-
-  console.log($("#champs_saisi").val());
-  var query = $("#champs_saisi").val();
-  appelAPI(query)
-
-
+$("#btn-lancer-recherche").click(appelAPI($("#champs_saisi").val()){
 })
 
 function appelAPI(query){
@@ -28,16 +23,16 @@ function appelAPI(query){
 
     $.getJSON(proxy+url2+data[0].woeid, function(rep){//demande infos sur la météo de la localisation
       $("#bloc-gif-attente").css("visibility", "hidden");
-      $("#localisation").append("<p><h1>"+data[0].title+"</h1><h2>, "+rep.parent.title+"</h2></p>");
+      $("#localisation").append("<p><h2>"+data[0].title+", "+rep.parent.title+"</h2></p>");
 
 
       var tableau = document.createElement('table');
       var valeur = ["Date", "Températures", "Temps", "Vent", "Humidité"];
-      var ligne = document.createElement('tr'); tableau.append(ligne);
       $.each(valeur, function(){
         var bloc = document.createElement('th');
         bloc.append(this);
       })
+      var ligne = document.createElement('tr'); tableau.append(ligne);
 
       $.each(rep.consolidated_weather, function(){
         var icone ='https://www.metaweather.com/static/img/weather/png/' + this.weather_state_abbr + '.png';
