@@ -7,12 +7,14 @@ if(localStorage.length ==0) {
   actualiserFav();
 }
 
-window.onstorage = event => { actualiserFav(); };
+window.onstorage = event => {
+  console.log("tttttt");
+  actualiserFav();
+};
 
-$("#champs_saisi").change(function(){
+$("#champs_saisi").keypress(function(){
   if(localStorage.getItem($("#champs_saisi").val() == null)){
     $("#btn-favoris img").attr("src", "images/etoile-vide.svg");
-
   }else{
     $("#btn-favoris img").attr("src", "images/etoile-pleine.svg");
   }
