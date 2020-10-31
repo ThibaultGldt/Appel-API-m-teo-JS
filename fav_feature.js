@@ -16,9 +16,9 @@ $("#champs_saisi").focus(function(){
 })
 
 $("#btn-favoris").click(function(){
+  var query = $("#champs_saisi").val();
+  
   $.getJSON(proxy + url1 + query, function(data){//demande de localisation
-    var query = $("#champs_saisi").val();
-    
     if(data.length != 1){
         alert("Veuillez entrer un nom de ville valide et complet");
     }else if($.inArray(query, localStorage) == -1){
