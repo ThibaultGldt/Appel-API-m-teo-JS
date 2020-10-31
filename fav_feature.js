@@ -49,6 +49,8 @@ function confirmation(query){
     suppFav(query);
   }*/
   $("#dialog").dialog({
+    height: "auto",
+    width: 400,
     title: "Supprimer "+query+" des favoris ?",
     text: "Vous êtes sur le point de supprimer "+query+" des favoris, voulez-vous vraiment continuer ?",
     buttons: {
