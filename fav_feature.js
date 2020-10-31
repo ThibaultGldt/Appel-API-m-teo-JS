@@ -7,11 +7,10 @@ if(localStorage.length ==0) {
   actualiserFav();
 }
 
-$(window).bind("onstorage", function(e){
-  actualiserFav();
-})
+window.onstorage = event => { actualiserFav(); };
+
 $("#champs_saisi").focus(function(){
-  if(localStorage.getItem($("#champs_saisi").val())){
+  if(localStorage.getItem($("#champs_saisi").val() == null)){
     $("#btn-favoris img").attr("src", "images/etoile-vide.svg");
 
   }else{
