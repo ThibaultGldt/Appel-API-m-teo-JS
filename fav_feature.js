@@ -9,7 +9,7 @@ if(localStorage.length ==0) {
 
 window.onstorage = event => { actualiserFav(); };
 
-$("#champs_saisi").focus(function(){
+$("#champs_saisi").change(function(){
   if(localStorage.getItem($("#champs_saisi").val() == null)){
     $("#btn-favoris img").attr("src", "images/etoile-vide.svg");
 
