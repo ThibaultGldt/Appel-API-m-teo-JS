@@ -38,7 +38,7 @@ function actualiserFav(){
   for(var key in localStorage){
     var ville = localStorage.getItem(key);
     $("#liste-favoris").append("<li>\n<span onclick=appelAPI('"+ville+"') title=\"Cliquer pour relancer la recherche\">"+ville+"</span>\n"
-                                +"<img src=\"images/croix.svg\" onclick=confirmation('"+ville"') alt=\"Icone pour supprimer le favori\" width=\"15\" title=\"Cliquer pour supprimer le favori\">\n</li>");
+                                +"<img src=\"images/croix.svg\" onclick=confirmation('"+ville+"') alt=\"Icone pour supprimer le favori\" width=\"15\" title=\"Cliquer pour supprimer le favori\">\n</li>");
   }
 }
 
