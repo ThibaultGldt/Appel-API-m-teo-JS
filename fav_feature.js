@@ -18,16 +18,24 @@ $("#btn-favoris").click(function(){
       localStorage.setItem(localStorage.length, query);
       actualiserFav();
     }else{
-      localStorage.removeItem(key);
+      suppFav(query);
       actualiserFav();
     }
   })
 })
 
 function actualiserFav(){
+  $("#liste-favoris").empty();
   for(var key in localStorage){
-    $("#liste-favoris").empty();
     $("#liste-favoris").append("<li>\n<span title=\"Cliquer pour relancer la recherche\">"+localStorage.getItem(key)+"</span>\n"
                                 +"<img src=\"images/croix.svg\" alt=\"Icone pour supprimer le favori\" width=\"15\" title=\"Cliquer pour supprimer le favori\">\n</li>")
+  }
+}
+
+function suppFav(query){
+  for(var key in localStorage){
+    if(localStorage.getItem(key) == query){
+      localStorage.removeItem(key);
+    }
   }
 }
