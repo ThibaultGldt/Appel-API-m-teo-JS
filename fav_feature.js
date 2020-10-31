@@ -28,7 +28,6 @@ $("#btn-favoris").click(function(){
       actualiserFav();
     }else{
       suppFav(query);
-      actualiserFav();
     }
   })
 })
@@ -56,4 +55,5 @@ function suppFav(query){
       localStorage.removeItem(key);
     }
   }
+  actualiserFav();
 }
