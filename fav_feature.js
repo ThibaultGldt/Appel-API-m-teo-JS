@@ -13,4 +13,5 @@ $("#btn-favoris").click(function(){
     }else if($.inArray(query, localStorage)){
       console.log("ca marche");
     }
+  })
 })
