@@ -6,7 +6,7 @@ if(localStorage.length ==0) {
 }else{
   actualiserFav();
 }
-if($.$.inArray(query, localStorage)){
+if($.inArray(query, localStorage)){
   $("#btn-favoris img").attr("src", "images/etoile-pleine.svg");
 }else{
   $("#btn-favoris img").attr("src", "images/etoile-vide.svg");
