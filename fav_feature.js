@@ -30,6 +30,7 @@ $("#btn-favoris").click(function(){
 
 function actualiserFav(){
   if(localStorage.length ==0) {
+    $("#liste-favoris").empty();
     $(".info-vide").last().css("display", "block");
   }else{
     $("#liste-favoris").empty();
