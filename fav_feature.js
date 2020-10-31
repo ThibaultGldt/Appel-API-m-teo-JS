@@ -52,7 +52,7 @@ function confirmation(query){
     height: "auto",
     width: 400,
     title: "Supprimer "+query+" des favoris ?",
-    appendTo('#section-favoris');
+    appendTo('#section-favoris'),
     buttons: {
       Confirmer: function(){
         suppFav(query);
