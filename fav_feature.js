@@ -12,7 +12,7 @@ window.addEventListener('onstorage', function(){
   actualiserFav();
 })
 
-$("#champs_saisi").keypress(function(){
+$("#champs_saisi").keyup(function(){
   console.log($("#champs_saisi").val());
   if(localStorage.getItem($("#champs_saisi").val()) == null){
     $("#btn-favoris img").attr("src", "images/etoile-vide.svg");
