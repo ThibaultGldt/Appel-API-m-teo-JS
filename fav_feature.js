@@ -7,12 +7,15 @@ if(localStorage.length ==0) {
 }else{
   actualiserFav();
 }
-if($.inArray(query, localStorage) == -1){
-  $("#btn-favoris img").attr("src", "images/etoile-vide.svg");
+$("#champs_saisi").focus(function(){
+  if($.inArray($("#champs_saisi").val(), localStorage) == -1){
+    $("#btn-favoris img").attr("src", "images/etoile-vide.svg");
 
-}else{
-  $("#btn-favoris img").attr("src", "images/etoile-pleine.svg");
-}
+  }else{
+    $("#btn-favoris img").attr("src", "images/etoile-pleine.svg");
+  }
+})
+
 $("#btn-favoris").click(function(){
   $.getJSON(proxy + url1 + query, function(data){//demande de localisation
 
@@ -31,7 +34,7 @@ $("#btn-favoris").click(function(){
 function actualiserFav(){
   $("#liste-favoris").empty();
   for(var key in localStorage){
-    $("#liste-favoris").append("<li>\n<span title=\"Cliquer pour relancer la recherche\">"+localStorage.getItem(key)+"</span>\n"
+    $("#liste-favoris").append("<li>\n<span onClick=\"appelAPI("+localStorage.getItem(key)+"title=\"Cliquer pour relancer la recherche\">"+localStorage.getItem(key)+"</span>\n"
                                 +"<img src=\"images/croix.svg\" alt=\"Icone pour supprimer le favori\" width=\"15\" title=\"Cliquer pour supprimer le favori\">\n</li>")
   }
 }
