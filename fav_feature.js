@@ -1,10 +1,9 @@
 var proxy = 'https://cors-anywhere.herokuapp.com/';
 var url1 = 'https://www.metaweather.com/api/location/search/?query=';
 
-  actualiserFav();
+actualiserFav();
 
 $("#champs_saisi").keyup(function(){
-  console.log($("#champs_saisi").val());
   if(localStorage.getItem($("#champs_saisi").val()) == null){
     $("#btn-favoris img").attr("src", "images/etoile-vide.svg");
   }else{
@@ -39,7 +38,6 @@ function actualiserFav(){
         continue;
       }
       var ville = localStorage.getItem(key);
-      console.log(key);
       $("#liste-favoris").append("<li>\n<span onclick=appelAPI('"+ville+"') title=\"Cliquer pour relancer la recherche\">"+ville+"</span>\n"
       +"<img src=\"images/croix.svg\" onclick=confirmation('"+ville+"') alt=\"Icone pour supprimer le favori\" width=\"15\" title=\"Cliquer pour supprimer le favori\">\n</li>");
     }
@@ -47,9 +45,18 @@ function actualiserFav(){
 }
 
 function confirmation(query){
-  if(confirm("Voulez vous vraiment supprimer ce favori: "+query+" ?")){
+  /*if(confirm("Voulez vous vraiment supprimer ce favori: "+query+" ?")){
     suppFav(query);
-  }
+  }*/
+  $("#dialog").dialog({
+    title: "test",
+    buttons: [{
+      text: "Valider",
+      click: function(){
+        suppFav(query);
+      }
+    }]
+  });
 }
 
 function suppFav(query){
