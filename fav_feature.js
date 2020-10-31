@@ -6,7 +6,11 @@ if(localStorage.length ==0) {
 }else{
   actualiserFav();
 }
-
+if($.$.inArray(query, localStorage)){
+  $("#btn-favoris img").attr("src", "images/etoile-pleine.svg");
+}else{
+  $("#btn-favoris img").attr("src", "images/etoile-vide.svg");
+}
 $("#btn-favoris").click(function(){
   var query = $("#champs_saisi").val();
   $.getJSON(proxy + url1 + query, function(data){//demande de localisation
@@ -33,7 +37,9 @@ function actualiserFav(){
 
 function suppFav(query){
   for(var key in localStorage){
+    console.log("test1");
     if(localStorage.getItem(key) == query){
+      console.log("test2");
       localStorage.removeItem(key);
     }
   }
