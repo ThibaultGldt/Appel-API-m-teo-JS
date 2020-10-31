@@ -1,6 +1,5 @@
 var proxy = 'https://cors-anywhere.herokuapp.com/';
 var url1 = 'https://www.metaweather.com/api/location/search/?query=';
-var query = $("#champs_saisi").val();
 
 if(localStorage.length ==0) {
   $(".info-vide").last().css("display", "block");
@@ -18,7 +17,8 @@ $("#champs_saisi").focus(function(){
 
 $("#btn-favoris").click(function(){
   $.getJSON(proxy + url1 + query, function(data){//demande de localisation
-
+    var query = $("#champs_saisi").val();
+    
     if(data.length != 1){
         alert("Veuillez entrer un nom de ville valide et complet");
     }else if($.inArray(query, localStorage) == -1){
