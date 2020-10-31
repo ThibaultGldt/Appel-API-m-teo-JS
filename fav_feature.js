@@ -24,6 +24,7 @@ $("#btn-favoris").click(function(){
         alert("Veuillez entrer un nom de ville valide et complet");
     }else if(localStorage.getItem(query) == null){
       localStorage.setItem(query, query);
+      $(".info-vide").last().css("display", "none");
       actualiserFav();
     }else{
       suppFav(query);
