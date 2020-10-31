@@ -126,7 +126,6 @@ tr {
 	justify-content: space-between;
 	flex-direction: row;
 	flex-wrap: wrap;
-	border-style: solid;
 }
 
 td img {
@@ -136,6 +135,7 @@ td img {
 
 td, th {
 	display: flex;
+	width: 15%;
 	flex-direction: column;
 	align-items: center;
 	border-style: solid;
