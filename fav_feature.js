@@ -11,7 +11,7 @@ $(window).bind("onstorage", function(e){
   actualiserFav();
 })
 $("#champs_saisi").focus(function(){
-  if(!localStorage.has($("#champs_saisi").val())){
+  if(localStorage.getItem($("#champs_saisi").val())){
     $("#btn-favoris img").attr("src", "images/etoile-vide.svg");
 
   }else{
@@ -25,7 +25,7 @@ $("#btn-favoris").click(function(){
   $.getJSON(proxy + url1 + query, function(data){//demande de localisation
     if(data.length != 1){
         alert("Veuillez entrer un nom de ville valide et complet");
-    }else if(!localStorage.has(query)){
+    }else if(localStorage.getItem(query) == null){
       localStorage.setItem(query, query);
     }else{
       suppFav(query);
