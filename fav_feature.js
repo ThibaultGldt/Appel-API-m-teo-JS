@@ -7,11 +7,6 @@ if(localStorage.length ==0) {
   actualiserFav();
 }
 
-window.addEventListener('onstorage', function(){
-  console.log("tttttt");
-  actualiserFav();
-})
-
 $("#champs_saisi").keyup(function(){
   console.log($("#champs_saisi").val());
   if(localStorage.getItem($("#champs_saisi").val()) == null){
@@ -29,8 +24,10 @@ $("#btn-favoris").click(function(){
         alert("Veuillez entrer un nom de ville valide et complet");
     }else if(localStorage.getItem(query) == null){
       localStorage.setItem(query, query);
+      actualiserFav();
     }else{
       suppFav(query);
+      actualiserFav();
     }
   })
 })
@@ -38,8 +35,9 @@ $("#btn-favoris").click(function(){
 function actualiserFav(){
   $("#liste-favoris").empty();
   for(var key in localStorage){
-    $("#liste-favoris").append("<li>\n<span onClick=\"appelAPI("+localStorage.getItem(key)+"title=\"Cliquer pour relancer la recherche\">"+localStorage.getItem(key)+"</span>\n"
+    $("#liste-favoris").append("<li>\n<span title=\"Cliquer pour relancer la recherche\">"+localStorage.getItem(key)+"</span>\n"
                                 +"<img src=\"images/croix.svg\" alt=\"Icone pour supprimer le favori\" width=\"15\" title=\"Cliquer pour supprimer le favori\">\n</li>")
+    $("#liste-favoris span").attr("onclick", appelAPI($(localStorage.getItem(key))));
   }
 }
 
