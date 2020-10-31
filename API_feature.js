@@ -25,7 +25,7 @@ function appelAPI(query){
   $.getJSON(proxy + url1 + query, function(data){//demande de localisation
 
     if(data.length != 1){
-        $("#aucun-res").css("display", "block");
+        $(".info-vide").first().css("display", "block");
         $("#bloc-gif-attente").css("display", "none");
     }else{
       $.getJSON(proxy+url2+data[0].woeid, function(rep){//demande infos sur la météo de la localisation
