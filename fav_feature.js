@@ -18,7 +18,8 @@ $("#btn-favoris").click(function(){
       localStorage.setItem(localStorage.length, query);
       actualiserFav();
     }else{
-      console.log(localStorage);
+      localStorage.removeItem(key);
+      actualiserFav();
     }
   })
 })
