@@ -49,13 +49,17 @@ function confirmation(query){
     suppFav(query);
   }*/
   $("#dialog").dialog({
-    title: "test",
-    buttons: [{
-      text: "Valider",
-      click: function(){
+    title: "Supprimer "+query+" des favoris ?",
+    text: "Vous êtes sur le point de supprimer "+query+" des favoris, voulez-vous vraiment continuer ?",
+    buttons: {
+      Confirmer: function(){
         suppFav(query);
+        $(this).dialog("close");
+      },
+      Cancel: function(){
+        $(this).dialog("close");
       }
-    }]
+    }
   });
 }
 
