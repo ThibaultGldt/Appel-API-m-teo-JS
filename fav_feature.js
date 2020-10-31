@@ -29,14 +29,15 @@ $("#btn-favoris").click(function(){
 })
 
 function actualiserFav(){
-  $("#liste-favoris").empty();
-  for(var key in localStorage){
-    var ville = localStorage.getItem(key);
-    $("#liste-favoris").append("<li>\n<span onclick=appelAPI('"+ville+"') title=\"Cliquer pour relancer la recherche\">"+ville+"</span>\n"
-                                +"<img src=\"images/croix.svg\" onclick=confirmation('"+ville+"') alt=\"Icone pour supprimer le favori\" width=\"15\" title=\"Cliquer pour supprimer le favori\">\n</li>");
-  }
   if(localStorage.length ==0) {
     $(".info-vide").last().css("display", "block");
+  }else{
+    $("#liste-favoris").empty();
+    for(var key in localStorage){
+      var ville = localStorage.getItem(key);
+      $("#liste-favoris").append("<li>\n<span onclick=appelAPI('"+ville+"') title=\"Cliquer pour relancer la recherche\">"+ville+"</span>\n"
+                                  +"<img src=\"images/croix.svg\" onclick=confirmation('"+ville+"') alt=\"Icone pour supprimer le favori\" width=\"15\" title=\"Cliquer pour supprimer le favori\">\n</li>");
+    }
   }
 }
 
