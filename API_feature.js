@@ -30,6 +30,7 @@ function appelAPI(query){
     }else{
       $.getJSON(proxy+url2+data[0].woeid, function(rep){//demande infos sur la météo de la localisation
         $("#bloc-gif-attente").css("display", "none");
+        $("#aucun-res").css("display", "none");
         $("#localisation").append("<p><h2>"+data[0].title+", "+rep.parent.title+"</h2></p>");
 
 
