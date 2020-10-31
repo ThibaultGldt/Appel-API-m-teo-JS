@@ -10,7 +10,7 @@ $("#btn-favoris").click(function(){
 
     if(data.length != 1){
         alert("Veuillez entrer un nom de ville valide et complet");
-    }else if($.inArray(query, localStorage)){
+    }else if($.inArray(query, localStorage) == -1){
       console.log("ca marche");
     }
   })
