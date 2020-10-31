@@ -7,10 +7,11 @@ if(localStorage.length ==0) {
 }else{
   actualiserFav();
 }
-if($.inArray(query, localStorage)){
-  $("#btn-favoris img").attr("src", "images/etoile-pleine.svg");
-}else{
+if($.inArray(query, localStorage) == -1){
   $("#btn-favoris img").attr("src", "images/etoile-vide.svg");
+
+}else{
+  $("#btn-favoris img").attr("src", "images/etoile-pleine.svg");
 }
 $("#btn-favoris").click(function(){
   $.getJSON(proxy + url1 + query, function(data){//demande de localisation
