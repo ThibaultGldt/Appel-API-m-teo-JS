@@ -1,11 +1,7 @@
 var proxy = 'https://cors-anywhere.herokuapp.com/';
 var url1 = 'https://www.metaweather.com/api/location/search/?query=';
 
-if(localStorage.length ==0) {
-  $(".info-vide").last().css("display", "block");
-}else{
   actualiserFav();
-}
 
 $("#champs_saisi").keyup(function(){
   console.log($("#champs_saisi").val());
@@ -38,6 +34,9 @@ function actualiserFav(){
     var ville = localStorage.getItem(key);
     $("#liste-favoris").append("<li>\n<span onclick=appelAPI('"+ville+"') title=\"Cliquer pour relancer la recherche\">"+ville+"</span>\n"
                                 +"<img src=\"images/croix.svg\" onclick=confirmation('"+ville+"') alt=\"Icone pour supprimer le favori\" width=\"15\" title=\"Cliquer pour supprimer le favori\">\n</li>");
+  }
+  if(localStorage.length ==0) {
+    $(".info-vide").last().css("display", "block");
   }
 }
 
