@@ -26,6 +26,7 @@ function appelAPI(query){
 
     if(data.length != 1){
         $("#aucun-res").css("display", "block");
+        $("#bloc-gif-attente").css("display", "none");
     }else{
       $.getJSON(proxy+url2+data[0].woeid, function(rep){//demande infos sur la météo de la localisation
         $("#bloc-gif-attente").css("display", "none");

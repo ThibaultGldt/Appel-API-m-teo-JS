@@ -134,7 +134,7 @@ td img {
 	height: 50px;
 }
 
-td {
+td, th {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
