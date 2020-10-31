@@ -36,6 +36,7 @@ function actualiserFav(){
     $("#liste-favoris").empty();
     for(var key in localStorage){
       var ville = localStorage.getItem(key);
+      console.log(key);
       $("#liste-favoris").append("<li>\n<span onclick=appelAPI('"+ville+"') title=\"Cliquer pour relancer la recherche\">"+ville+"</span>\n"
                                   +"<img src=\"images/croix.svg\" onclick=confirmation('"+ville+"') alt=\"Icone pour supprimer le favori\" width=\"15\" title=\"Cliquer pour supprimer le favori\">\n</li>");
     }
@@ -50,9 +51,7 @@ function confirmation(query){
 
 function suppFav(query){
   for(var key in localStorage){
-    console.log("test1");
     if(localStorage.getItem(key) == query){
-      console.log("test2");
       localStorage.removeItem(key);
     }
   }
