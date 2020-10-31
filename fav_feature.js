@@ -1,7 +1,7 @@
 var proxy = 'https://cors-anywhere.herokuapp.com/';
 var url1 = 'https://www.metaweather.com/api/location/search/?query=';
 
-if(localStorage.empty()){
+if(localStorage.length ==0){
   $(".info-vide").last().css("display", "block");
 }else{
   for(var key in localStorage){
