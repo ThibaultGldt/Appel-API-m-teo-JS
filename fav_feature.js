@@ -7,12 +7,13 @@ if(localStorage.length ==0) {
   actualiserFav();
 }
 
-window.onstorage = event => {
+window.addEventListener('storage', function(){
   console.log("tttttt");
   actualiserFav();
-};
+})
 
 $("#champs_saisi").keypress(function(){
+  console.log(localStorage.getItem($("#champs_saisi").val()));
   if(localStorage.getItem($("#champs_saisi").val() == null)){
     $("#btn-favoris img").attr("src", "images/etoile-vide.svg");
   }else{
