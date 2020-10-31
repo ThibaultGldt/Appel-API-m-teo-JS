@@ -14,7 +14,7 @@ window.addEventListener('storage', function(){
 
 $("#champs_saisi").keypress(function(){
   console.log(localStorage.getItem($("#champs_saisi").val()));
-  if(localStorage.getItem($("#champs_saisi").val() == null)){
+  if(localStorage.getItem($("#champs_saisi").val()) == null){
     $("#btn-favoris img").attr("src", "images/etoile-vide.svg");
   }else{
     $("#btn-favoris img").attr("src", "images/etoile-pleine.svg");
