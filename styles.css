@@ -208,10 +208,10 @@ footer {
 	align-items: center;
 	justify-content: center;
 }
-footer p {
+.trait {
 	width: 70%;
 	height: 2px;
-	padding: 5px;
+	margin: 5px;
 	background: var(--main-green);
 
 }
