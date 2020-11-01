@@ -210,8 +210,8 @@ footer {
 	justify-content: center;
 }
 .trait {
-	width: 70%;
-	height: 2px;
+	width: 90%;
+	height: 1px;
 	margin: 5px;
 	background: var(--main-green);
 
