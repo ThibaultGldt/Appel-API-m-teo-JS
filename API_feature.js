@@ -5,17 +5,20 @@ var proxy = 'https://cors-anywhere.herokuapp.com/';
 var url1 = 'https://www.metaweather.com/api/location/search/?query=';
 var url2 = 'https://www.metaweather.com/api/location/';
 
-$("#champs_saisi").focus(function(){
-  $(document).on('keypress',function(e) {
-      if(e.which == 13) {
-          appelAPI($("#champs_saisi").val())
-      }
-    })
-})
+function init(){
+  $("#champs_saisi").focus(function(){
+    $(document).on('keypress',function(e) {
+        if(e.which == 13) {
+            appelAPI($("#champs_saisi").val())
+        }
+      })
+  })
 
-$("#btn-lancer-recherche").click(function(){
-  appelAPI($("#champs_saisi").val());
-})
+  $("#btn-lancer-recherche").click(function(){
+    appelAPI($("#champs_saisi").val());
+  })
+}
+
 
 function appelAPI(query){
   $("#localisation").empty();
