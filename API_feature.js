@@ -26,13 +26,14 @@ function appelAPI(query){
   $("#bloc-gif-attente").css("display", "block");
 
   $.getJSON(proxy + url1 + query, function(data){//demande de localisation
-    $("#localisation").empty();
-    $("#bloc-resultats").empty();
+
     if(data.length != 1){
         $(".info-vide").first().css("display", "block");
         $("#bloc-gif-attente").css("display", "none");
     }else{
       $.getJSON(proxy+url2+data[0].woeid, function(rep){//demande infos sur la météo de la localisation
+        $("#localisation").empty();
+        $("#bloc-resultats").empty();
         $("#bloc-gif-attente").css("display", "none");
         $("#aucun-res").css("display", "none");
         $("#localisation").append("<p><h2>"+data[0].title+", "+rep.parent.title+"</h2></p>");
