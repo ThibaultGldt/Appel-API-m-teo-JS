@@ -18,6 +18,7 @@ $("#btn-lancer-recherche").click(function(){
 })
 
 function appelAPI(query){
+  console.log("test");
   $("#localisation").empty();
   $("#bloc-resultats").empty();
   $("#bloc-gif-attente").css("display", "block");
