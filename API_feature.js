@@ -22,12 +22,12 @@ function init(){
 
 function appelAPI(query){
   console.log("test");
-  $("#localisation").empty();
-  $("#bloc-resultats").empty();
+
   $("#bloc-gif-attente").css("display", "block");
 
   $.getJSON(proxy + url1 + query, function(data){//demande de localisation
-
+    $("#localisation").empty();
+    $("#bloc-resultats").empty();
     if(data.length != 1){
         $(".info-vide").first().css("display", "block");
         $("#bloc-gif-attente").css("display", "none");
