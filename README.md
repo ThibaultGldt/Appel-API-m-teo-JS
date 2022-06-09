@@ -1,4 +1,4 @@
-# m4103c-projet-js-2020-2021
+# TP IUT Appel à une API en JavaScript
 Base de code de départ pour le projet JS "Développement d'une interface pour API publique"
 
 lien de l'API: https://www.metaweather.com/api/
